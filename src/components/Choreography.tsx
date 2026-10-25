@@ -8,28 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function Choreography() {
   useEffect(() => {
-    const loops = document.querySelectorAll<HTMLVideoElement>("video[data-loop]");
-    const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (calm) {
-      loops.forEach((video) => {
-        video.preload = "metadata";
-        video.controls = true;
-      });
-      return;
-    }
-
-    const playWhenVisible = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(({ target, isIntersecting }) => {
-          const video = target as HTMLVideoElement;
-          if (isIntersecting) video.play().catch(() => {});
-          else video.pause();
-        });
-      },
-      { rootMargin: "200px 0px" },
-    );
-    loops.forEach((video) => playWhenVisible.observe(video));
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const context = gsap.context(() => {
       gsap.from("[data-hero-line] > span", {
@@ -85,10 +64,7 @@ export function Choreography() {
       });
     });
 
-    return () => {
-      playWhenVisible.disconnect();
-      context.revert();
-    };
+    return () => context.revert();
   }, []);
 
   return null;

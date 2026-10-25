@@ -199,6 +199,7 @@ export const ru: Content = {
       { key: "seaPig", name: "Морская свинья", latin: "Scotoplanes globosa", depth: "1 000–6 000 м", size: "до 15 см", zone: "Бездна", note: "Снимок: NOAA / MBARI" },
     ],
   },
+  video: { play: "Смотреть", pause: "Пауза" },
   gauge: {
     descent: "Погружение",
     ascent: "Всплытие",

@@ -62,6 +62,7 @@ export type Content = {
     you: { name: string; role: (meters: string) => string };
   };
   bestiary: { heading: string; lead: string; creatures: Creature[] };
+  video: { play: string; pause: string };
   gauge: {
     descent: string;
     ascent: string;

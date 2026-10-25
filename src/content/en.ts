@@ -197,6 +197,7 @@ export const en: Content = {
       { key: "seaPig", name: "Sea pig", latin: "Scotoplanes globosa", depth: "1,000–6,000 m", size: "up to 15 cm", zone: "Abyss", note: "Photo: NOAA / MBARI" },
     ],
   },
+  video: { play: "Play", pause: "Pause" },
   gauge: {
     descent: "Descent",
     ascent: "Ascent",
