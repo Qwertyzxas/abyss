@@ -8,6 +8,8 @@ const config: NextConfig = {
   trailingSlash: true,
   images: { unoptimized: true },
   reactStrictMode: true,
+  agentRules: false,
+  devIndicators: false,
 };
 
 export default config;

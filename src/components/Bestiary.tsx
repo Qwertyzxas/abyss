@@ -26,7 +26,7 @@ export function Bestiary() {
           const photo = media[creature.key];
           return (
             <li key={creature.key} className={styles.tile} data-reveal>
-              <div className={styles.photo} data-plate={photo.plate ? "" : undefined}>
+              <div className={styles.photo} data-treatment={photo.treatment}>
                 <img src={asset(photo.src)} width={photo.width} height={photo.height} alt="" loading="lazy" />
               </div>
               <div className={styles.tag} data-tone={tones[index % tones.length]}>

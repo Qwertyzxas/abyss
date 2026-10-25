@@ -12,12 +12,7 @@ export function Photo({ shot, className }: PhotoProps) {
   const item = media[shot.key];
 
   return (
-    <figure
-      className={`${styles.photo} ${className ?? ""}`}
-      data-plate={item.plate ? "" : undefined}
-      data-mono={item.mono ? "" : undefined}
-      data-reveal-group
-    >
+    <figure className={`${styles.photo} ${className ?? ""}`} data-treatment={item.treatment} data-reveal-group>
       <div className={styles.frame} data-reveal>
         {item.video ? (
           <video
@@ -40,7 +35,7 @@ export function Photo({ shot, className }: PhotoProps) {
             alt={shot.alt}
             loading="lazy"
             decoding="async"
-            data-drift={item.plate ? undefined : ""}
+            data-drift={item.treatment ? undefined : ""}
           />
         )}
       </div>

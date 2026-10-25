@@ -3,7 +3,7 @@ import { AUTHOR_URL, REPO_URL } from "./ru";
 
 export const en: Content = {
   meta: {
-    title: "Abyss: 10,935 meters down",
+    title: "Abyss",
     description: "A descent from the surface of the Pacific to the floor of the Mariana Trench: five depth zones and the animals that live in them.",
   },
   nav: {

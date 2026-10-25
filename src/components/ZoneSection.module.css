@@ -106,10 +106,8 @@
   grid-column: 1 / -1;
   grid-row: 4;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: clamp(24px, 4vw, 64px);
-  padding: clamp(20px, 3vw, 48px);
-  background: var(--paper);
-  color: var(--ink-dark);
+  column-gap: clamp(24px, 4vw, 80px);
+  margin-top: clamp(16px, 3vw, 48px);
   --ratio: 4 / 3;
 }
 

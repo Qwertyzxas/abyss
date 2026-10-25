@@ -9,7 +9,15 @@
   position: relative;
   overflow: hidden;
   aspect-ratio: var(--ratio, 4 / 3);
-  background: rgb(0 0 0 / 0.2);
+}
+
+.photo:not([data-treatment="cutout"]) .frame {
+  --fade-x: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
+  --fade-y: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: var(--fade-x), var(--fade-y);
+  -webkit-mask-composite: source-in;
+  mask-image: var(--fade-x), var(--fade-y);
+  mask-composite: intersect;
 }
 
 .frame img,
@@ -23,18 +31,22 @@
   will-change: transform;
 }
 
-.photo[data-plate] .frame {
-  background: var(--paper);
+.photo:not([data-treatment]) .frame img,
+.photo:not([data-treatment]) .frame video {
+  filter: saturate(0.92) contrast(1.04);
 }
 
-.photo[data-plate] .frame img {
+.photo[data-treatment] .frame img {
   object-fit: contain;
-  padding: 6%;
-  mix-blend-mode: multiply;
 }
 
-.photo[data-mono] .frame img {
-  filter: grayscale(1) contrast(1.08);
+.photo[data-treatment="cutout"] .frame img {
+  padding: 4%;
+}
+
+.photo[data-treatment="chart"] .frame img {
+  filter: grayscale(1) invert(1) sepia(0.6) hue-rotate(130deg) saturate(1.5) brightness(0.58) contrast(1.45);
+  mix-blend-mode: screen;
 }
 
 .caption {
@@ -42,4 +54,8 @@
   font-size: var(--step-small);
   line-height: 1.45;
   opacity: 0.86;
+}
+
+.photo:not([data-treatment]) .caption {
+  padding-inline: 4%;
 }

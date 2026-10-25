@@ -19,8 +19,7 @@ export type MediaItem = {
   width: number;
   height: number;
   video?: string;
-  plate?: boolean;
-  mono?: boolean;
+  treatment?: "cutout" | "chart";
   credit: { title: string; author: string; license: string; page: string };
 };
 
@@ -61,10 +60,10 @@ export const media: Record<MediaKey, MediaItem> = {
     },
   },
   anglerfish: {
-    src: "/images/anglerfish.jpg",
-    width: 1600,
-    height: 1231,
-    plate: true,
+    src: "/images/anglerfish.webp",
+    width: 1200,
+    height: 923,
+    treatment: "cutout",
     credit: {
       title: "Melanocetus johnsonii",
       author: "G. H. Ford",
@@ -73,10 +72,10 @@ export const media: Record<MediaKey, MediaItem> = {
     },
   },
   vampireSquid: {
-    src: "/images/vampire-squid.jpg",
-    width: 1600,
-    height: 1081,
-    plate: true,
+    src: "/images/vampire-squid.webp",
+    width: 1200,
+    height: 811,
+    treatment: "cutout",
     credit: {
       title: "Vampyroteuthis infernalis",
       author: "Carl Chun",
@@ -97,8 +96,8 @@ export const media: Record<MediaKey, MediaItem> = {
   },
   tripodFish: {
     src: "/images/tripod-fish.jpg",
-    width: 1600,
-    height: 900,
+    width: 1591,
+    height: 860,
     credit: {
       title: "Tripod fish",
       author: "North Atlantic Stepping Stones Science Party, NOAA/OAR/OER",
@@ -132,8 +131,7 @@ export const media: Record<MediaKey, MediaItem> = {
     src: "/images/snailfish-map.jpg",
     width: 1600,
     height: 1133,
-    plate: true,
-    mono: true,
+    treatment: "chart",
     credit: {
       title: "Pseudoliparis swirei in Mariana Trench map",
       author: "Gerringer et al. (2017)",

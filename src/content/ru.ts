@@ -5,7 +5,7 @@ export const AUTHOR_URL = "https://github.com/Qwertyzxas";
 
 export const ru: Content = {
   meta: {
-    title: "Бездна. 10 935 метров вниз",
+    title: "Бездна",
     description: "Погружение от поверхности Тихого океана до дна Марианской впадины: пять зон глубины и те, кто в них живёт.",
   },
   nav: {

@@ -40,14 +40,13 @@
   transition: transform 0.9s var(--ease-out);
 }
 
-.photo[data-plate] {
-  background: var(--paper);
+.photo[data-treatment] {
+  background: var(--deep-tile);
 }
 
-.photo[data-plate] img {
+.photo[data-treatment] img {
   object-fit: contain;
   padding: 8%;
-  mix-blend-mode: multiply;
 }
 
 .tile:hover .photo img {
