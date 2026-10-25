@@ -1,0 +1,59 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100svh;
+  padding: 14svh var(--margin) 40px;
+}
+
+.title {
+  font-size: var(--step-display);
+  letter-spacing: -0.045em;
+  line-height: 0.84;
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.04em;
+}
+
+.line > span {
+  display: inline-block;
+}
+
+.dark {
+  color: var(--ink-dark);
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 24px;
+  align-self: flex-end;
+  max-width: 34ch;
+  text-align: right;
+  font-size: var(--step-lead);
+  line-height: 1.4;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding-top: 18svh;
+    padding-bottom: 24px;
+  }
+
+  .aside {
+    align-self: stretch;
+    align-items: flex-start;
+    max-width: none;
+    text-align: left;
+    font-size: var(--step-lead);
+  }
+
+  .aside :global(.button) {
+    align-self: stretch;
+  }
+}

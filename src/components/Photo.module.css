@@ -1,0 +1,45 @@
+.photo {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: var(--ratio, 4 / 3);
+  background: rgb(0 0 0 / 0.2);
+}
+
+.frame img,
+.frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--focus, 50% 50%);
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.photo[data-plate] .frame {
+  background: var(--paper);
+}
+
+.photo[data-plate] .frame img {
+  object-fit: contain;
+  padding: 6%;
+  mix-blend-mode: multiply;
+}
+
+.photo[data-mono] .frame img {
+  filter: grayscale(1) contrast(1.08);
+}
+
+.caption {
+  max-width: 52ch;
+  font-size: var(--step-small);
+  line-height: 1.45;
+  opacity: 0.86;
+}

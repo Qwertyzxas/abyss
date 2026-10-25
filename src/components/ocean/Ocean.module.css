@@ -1,0 +1,20 @@
+.ocean {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  animation: surface 1.6s 0.2s ease-out forwards;
+}
+
+@keyframes surface {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ocean {
+    animation-duration: 0.01s;
+  }
+}
